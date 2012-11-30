@@ -9,6 +9,7 @@
 #import "categoriesViewController.h"
 #import "categoriesTableViewCell.h"
 #import "rangoliViewController.h"
+#import "AFJSONRequestOperation.h"
 
 @interface categoriesViewController ()
 
@@ -41,6 +42,15 @@
 }
 
 - (void)getRangolis {
+    
+    NSURL *url = [NSURL URLWithString:@"https://alpha-api.app.net/stream/0/posts/stream/global"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"App.net Global Stream: %@", JSON);
+    } failure:nil];
+    [operation start];
+    
+    
     rangolis = [NSMutableArray arrayWithObjects:
                 @"Pearl",
                 @"Chakra",

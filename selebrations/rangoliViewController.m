@@ -7,6 +7,7 @@
 //
 
 #import "rangoliViewController.h"
+#import "selebrationsWebViewController.h"
 
 @interface rangoliViewController ()
 
@@ -35,6 +36,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"web"]) {
+        selebrationsWebViewController *web = [segue destinationViewController];
+        if (web.view) {
+            [web.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: @"http://selebrations.pavanratnakar.com/shop/silk-lotus-rangoli/"]]];
+        }
+        
+    }
 }
 
 @end
