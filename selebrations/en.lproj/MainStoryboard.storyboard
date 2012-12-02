@@ -90,7 +90,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="77"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSh-dX-GO7">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSh-dX-GO7">
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="172" id="o5I-3X-RLb"/>
                                             </constraints>
@@ -104,18 +104,22 @@
                                                 <constraint firstAttribute="width" constant="90" id="pai-OT-naX"/>
                                             </constraints>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WMk-85-y2S"/>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="HSh-dX-GO7" firstAttribute="leading" secondItem="Tb0-YP-QbE" secondAttribute="leading" constant="105" id="77P-Cs-DFK"/>
+                                    <constraint firstItem="WMk-85-y2S" firstAttribute="leading" secondItem="Tb0-YP-QbE" secondAttribute="leading" constant="156" id="KUJ-7k-TMH"/>
                                     <constraint firstItem="F54-GV-oet" firstAttribute="leading" secondItem="Tb0-YP-QbE" secondAttribute="leading" constant="5" id="PyZ-qj-Af6"/>
                                     <constraint firstItem="HSh-dX-GO7" firstAttribute="bottom" secondItem="F54-GV-oet" secondAttribute="bottom" type="default" id="aLr-Qk-w8e"/>
                                     <constraint firstItem="F54-GV-oet" firstAttribute="top" secondItem="Tb0-YP-QbE" secondAttribute="top" constant="4" id="cSB-7g-IFp"/>
+                                    <constraint firstItem="WMk-85-y2S" firstAttribute="centerY" secondItem="Tb0-YP-QbE" secondAttribute="centerY" type="default" id="hCD-EJ-Tk8"/>
                                     <constraint firstItem="HSh-dX-GO7" firstAttribute="top" secondItem="F54-GV-oet" secondAttribute="top" type="default" id="lcn-vi-req"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="label" destination="HSh-dX-GO7" id="wVO-Lb-a1H"/>
+                                    <outlet property="loader" destination="WMk-85-y2S" id="b56-fC-hec"/>
                                     <outlet property="thumbnail" destination="F54-GV-oet" id="nEj-d1-GOG"/>
                                     <segue destination="2fQ-Qa-i1s" kind="push" identifier="rangoli" trigger="accessoryAction" id="Q4m-sL-re1"/>
                                 </connections>
@@ -300,6 +304,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/categoriesTableViewCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loader" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="thumbnail" candidateClass="UIImageView"/>
             </relationships>
         </class>

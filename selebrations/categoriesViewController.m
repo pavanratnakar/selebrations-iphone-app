@@ -42,25 +42,34 @@
 }
 
 - (void)getRangolis {
-    
-    NSURL *url = [NSURL URLWithString:@"https://alpha-api.app.net/stream/0/posts/stream/global"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://selebrations.pavanratnakar.com/rangoliController.php?type=rangolis"]];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"App.net Global Stream: %@", JSON);
-    } failure:nil];
+        rangolis = [JSON valueForKeyPath:@"response"];
+        
+        // TODO : STUPID LOGIC. NEED TO REVISE
+        NSInteger i = 0;
+        NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
+        for (id rangoli in rangolis) {
+            [indexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+            i++;
+        }
+
+        [self.tableView beginUpdates];
+        [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
+        [self.tableView endUpdates];
+
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON){
+        NSLog(@"Selebrations Rangolis: %@,%@,%@", response,error,JSON);
+    }];
     [operation start];
-    
-    
-    rangolis = [NSMutableArray arrayWithObjects:
-                @"Pearl",
-                @"Chakra",
-                @"Medium Diya Plates",
-                @"Square",
-                nil];
     images = [NSMutableArray arrayWithObjects:
               @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/pearl_rangoli",
               @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/chakra_rangoli",
               @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/medium_diya_plate_red",
+              @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/square_rangoli",
+              @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/square_rangoli",
+              @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/square_rangoli",
+              @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/square_rangoli",
               @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/square_rangoli",
               nil];
 }
@@ -80,12 +89,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     categoriesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    cell.label.text = [rangolis objectAtIndex:indexPath.row];
-
-    cell.imageView.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@-90x67.jpg",[images objectAtIndex:indexPath.row]]]]];
-    
+    if (cell == nil) {
+        cell = [[categoriesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    NSMutableDictionary *rangoliDetails = [rangolis objectAtIndex:indexPath.row];
+    [[cell loader] stopAnimating];
+    cell.label.text =[NSString stringWithFormat:@"%@",[rangoliDetails objectForKey:@"title"]];
+    // TODO : NEED TO ADD IMAGES IN SERVER RESPONSE
+    cell.imageView.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@-90x67.jpg",[images objectAtIndex:0]]]]];
     return cell;
 }
 
@@ -135,8 +146,9 @@
         NSInteger selectedIndex = [[self.tableView indexPathForSelectedRow] row];
         rangoliViewController *rangoli = [segue destinationViewController];
         if (rangoli.view) {
-            rangoli.label.text = [NSString stringWithFormat:@"%@ Rangoli",[rangolis objectAtIndex:selectedIndex]];
-            rangoli.image.image =  [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@-150x112.jpg",[images objectAtIndex:selectedIndex]]]]];
+            NSMutableDictionary *rangoliDetails = [rangolis objectAtIndex:selectedIndex];
+            rangoli.label.text =[NSString stringWithFormat:@"%@",[rangoliDetails objectForKey:@"title"]];
+            rangoli.image.image =  [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@-150x112.jpg",[images objectAtIndex:0]]]]];
         }
         
     }

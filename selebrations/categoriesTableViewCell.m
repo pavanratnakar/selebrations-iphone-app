@@ -10,13 +10,19 @@
 
 @implementation categoriesTableViewCell
 
-@synthesize thumbnail,label;
+@synthesize thumbnail,label,loader;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
     }
+    return self;
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    if ( !(self = [super initWithCoder:aDecoder]) ) return nil;
+    [loader startAnimating];
     return self;
 }
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface categoriesViewController : UITableViewController <NSXMLParserDelegate> {
+@interface categoriesViewController : UITableViewController {
     NSMutableArray *rangolis;
     NSMutableArray *images;
     // loadSwirlie will display a loading overlay while the data is downloaded from the RSS feed.

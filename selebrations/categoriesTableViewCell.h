@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loader;
 
 @end
