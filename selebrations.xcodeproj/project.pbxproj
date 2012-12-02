@@ -50,6 +50,35 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A90ABD8D166BBA5C0084E1C2 /* blackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackButton.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/blackButton.png"; sourceTree = "<group>"; };
+		A90ABD8E166BBA5C0084E1C2 /* blackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blackButton@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/blackButton@2x.png"; sourceTree = "<group>"; };
+		A90ABD8F166BBA5C0084E1C2 /* blackButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackButtonHighlight.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/blackButtonHighlight.png"; sourceTree = "<group>"; };
+		A90ABD90166BBA5C0084E1C2 /* blackButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blackButtonHighlight@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/blackButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		A90ABD91166BBA5C0084E1C2 /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueButton.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/blueButton.png"; sourceTree = "<group>"; };
+		A90ABD92166BBA5C0084E1C2 /* blueButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blueButton@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/blueButton@2x.png"; sourceTree = "<group>"; };
+		A90ABD93166BBA5C0084E1C2 /* blueButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueButtonHighlight.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/blueButtonHighlight.png"; sourceTree = "<group>"; };
+		A90ABD94166BBA5C0084E1C2 /* blueButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blueButtonHighlight@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/blueButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		A90ABD95166BBA5C0084E1C2 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenButton.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/greenButton.png"; sourceTree = "<group>"; };
+		A90ABD96166BBA5C0084E1C2 /* greenButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "greenButton@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/greenButton@2x.png"; sourceTree = "<group>"; };
+		A90ABD97166BBA5C0084E1C2 /* greenButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenButtonHighlight.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/greenButtonHighlight.png"; sourceTree = "<group>"; };
+		A90ABD98166BBA5C0084E1C2 /* greenButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "greenButtonHighlight@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/greenButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		A90ABD99166BBA5C0084E1C2 /* greyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greyButton.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/greyButton.png"; sourceTree = "<group>"; };
+		A90ABD9A166BBA5C0084E1C2 /* greyButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "greyButton@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/greyButton@2x.png"; sourceTree = "<group>"; };
+		A90ABD9B166BBA5C0084E1C2 /* greyButton@2xpng */ = {isa = PBXFileReference; lastKnownFileType = file; name = "greyButton@2xpng"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/greyButton@2xpng"; sourceTree = "<group>"; };
+		A90ABD9C166BBA5C0084E1C2 /* greyButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greyButtonHighlight.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/greyButtonHighlight.png"; sourceTree = "<group>"; };
+		A90ABD9D166BBA5C0084E1C2 /* greyButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "greyButtonHighlight@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/greyButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		A90ABD9E166BBA5C0084E1C2 /* orangeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orangeButton.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/orangeButton.png"; sourceTree = "<group>"; };
+		A90ABD9F166BBA5C0084E1C2 /* orangeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "orangeButton@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/orangeButton@2x.png"; sourceTree = "<group>"; };
+		A90ABDA0166BBA5C0084E1C2 /* orangeButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orangeButtonHighlight.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/orangeButtonHighlight.png"; sourceTree = "<group>"; };
+		A90ABDA1166BBA5C0084E1C2 /* orangeButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "orangeButtonHighlight@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/orangeButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		A90ABDA2166BBA5C0084E1C2 /* tanButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tanButton.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/tanButton.png"; sourceTree = "<group>"; };
+		A90ABDA3166BBA5C0084E1C2 /* tanButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tanButton@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/tanButton@2x.png"; sourceTree = "<group>"; };
+		A90ABDA4166BBA5C0084E1C2 /* tanButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tanButtonHighlight.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/tanButtonHighlight.png"; sourceTree = "<group>"; };
+		A90ABDA5166BBA5C0084E1C2 /* tanButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tanButtonHighlight@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/tanButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		A90ABDA6166BBA5C0084E1C2 /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteButton.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/whiteButton.png"; sourceTree = "<group>"; };
+		A90ABDA7166BBA5C0084E1C2 /* whiteButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "whiteButton@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/whiteButton@2x.png"; sourceTree = "<group>"; };
+		A90ABDA8166BBA5C0084E1C2 /* whiteButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteButtonHighlight.png; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/whiteButtonHighlight.png"; sourceTree = "<group>"; };
+		A90ABDA9166BBA5C0084E1C2 /* whiteButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "whiteButtonHighlight@2x.png"; path = "../../../../Users/pavanr/Downloads/iOS Buttons/buttons/whiteButtonHighlight@2x.png"; sourceTree = "<group>"; };
 		A9776EED166902AE0025A038 /* selebrations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = selebrations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9776EF1166902AE0025A038 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9776EF3166902AE0025A038 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,9 +210,6 @@
 				A9776EFA166902AE0025A038 /* InfoPlist.strings */,
 				A9776EFD166902AE0025A038 /* main.m */,
 				A9776EFF166902AE0025A038 /* selebrations-Prefix.pch */,
-				A9776F03166902AE0025A038 /* Default.png */,
-				A9776F05166902AE0025A038 /* Default@2x.png */,
-				A9776F07166902AE0025A038 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -264,6 +290,9 @@
 		A9776F58166B7BA60025A038 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A9776F03166902AE0025A038 /* Default.png */,
+				A9776F05166902AE0025A038 /* Default@2x.png */,
+				A9776F07166902AE0025A038 /* Default-568h@2x.png */,
 				A9776F66166B82B00025A038 /* buttons */,
 				A9776F59166B7BAC0025A038 /* backgrounds */,
 			);
@@ -291,6 +320,35 @@
 		A9776F66166B82B00025A038 /* buttons */ = {
 			isa = PBXGroup;
 			children = (
+				A90ABD8D166BBA5C0084E1C2 /* blackButton.png */,
+				A90ABD8E166BBA5C0084E1C2 /* blackButton@2x.png */,
+				A90ABD8F166BBA5C0084E1C2 /* blackButtonHighlight.png */,
+				A90ABD90166BBA5C0084E1C2 /* blackButtonHighlight@2x.png */,
+				A90ABD91166BBA5C0084E1C2 /* blueButton.png */,
+				A90ABD92166BBA5C0084E1C2 /* blueButton@2x.png */,
+				A90ABD93166BBA5C0084E1C2 /* blueButtonHighlight.png */,
+				A90ABD94166BBA5C0084E1C2 /* blueButtonHighlight@2x.png */,
+				A90ABD95166BBA5C0084E1C2 /* greenButton.png */,
+				A90ABD96166BBA5C0084E1C2 /* greenButton@2x.png */,
+				A90ABD97166BBA5C0084E1C2 /* greenButtonHighlight.png */,
+				A90ABD98166BBA5C0084E1C2 /* greenButtonHighlight@2x.png */,
+				A90ABD99166BBA5C0084E1C2 /* greyButton.png */,
+				A90ABD9A166BBA5C0084E1C2 /* greyButton@2x.png */,
+				A90ABD9B166BBA5C0084E1C2 /* greyButton@2xpng */,
+				A90ABD9C166BBA5C0084E1C2 /* greyButtonHighlight.png */,
+				A90ABD9D166BBA5C0084E1C2 /* greyButtonHighlight@2x.png */,
+				A90ABD9E166BBA5C0084E1C2 /* orangeButton.png */,
+				A90ABD9F166BBA5C0084E1C2 /* orangeButton@2x.png */,
+				A90ABDA0166BBA5C0084E1C2 /* orangeButtonHighlight.png */,
+				A90ABDA1166BBA5C0084E1C2 /* orangeButtonHighlight@2x.png */,
+				A90ABDA2166BBA5C0084E1C2 /* tanButton.png */,
+				A90ABDA3166BBA5C0084E1C2 /* tanButton@2x.png */,
+				A90ABDA4166BBA5C0084E1C2 /* tanButtonHighlight.png */,
+				A90ABDA5166BBA5C0084E1C2 /* tanButtonHighlight@2x.png */,
+				A90ABDA6166BBA5C0084E1C2 /* whiteButton.png */,
+				A90ABDA7166BBA5C0084E1C2 /* whiteButton@2x.png */,
+				A90ABDA8166BBA5C0084E1C2 /* whiteButtonHighlight.png */,
+				A90ABDA9166BBA5C0084E1C2 /* whiteButtonHighlight@2x.png */,
 				A9776F0F166902AE0025A038 /* first.png */,
 				A9776F11166902AE0025A038 /* first@2x.png */,
 				A9776F16166902AE0025A038 /* second.png */,
@@ -522,6 +580,7 @@
 				A9776F1E166902AE0025A038 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -89,11 +89,12 @@
     NSMutableDictionary *rangoliDetails = [rangolis objectAtIndex:indexPath.row];\
     
     // ADD CELL PROPERTIES
-    [[cell loader] stopAnimating];
+    [cell stopLoaderAnimation];
     cell.label.text =[NSString stringWithFormat:@"%@",[rangoliDetails objectForKey:@"title"]];
     cell.imageView.layer.masksToBounds = YES;
     cell.imageView.layer.borderColor = [UIColor blackColor].CGColor;
     cell.imageView.layer.borderWidth = 1;
+    cell.imageView.layer.shadowColor = [UIColor blackColor].CGColor;
     cell.imageView.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@-80x80.jpg",[rangoliDetails objectForKey:@"guid"]]]]];
 
     return cell;
@@ -147,9 +148,13 @@
             rangoli.id = [rangoliDetails objectForKey:@"post_name"];
             rangoli.label.text =[NSString stringWithFormat:@"%@",[rangoliDetails objectForKey:@"title"]];
             rangoli.imageView.layer.masksToBounds = YES;
-            rangoli.imageView.layer.borderColor = [UIColor blackColor].CGColor;
+            rangoli.imageView.layer.borderColor = [UIColor orangeColor].CGColor;
             rangoli.imageView.layer.borderWidth = 1;
+            rangoli.imageView.layer.shadowColor = [UIColor blackColor].CGColor;
             rangoli.imageView.image =  [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@.jpg",[rangoliDetails objectForKey:@"guid"]]]]];
+            rangoli.stockDetails.text = [NSString stringWithFormat:@"In Stock"];
+            rangoli.description.text = [rangoliDetails objectForKey:@"post_excerpt"];
+            rangoli.price.text =  [NSString stringWithFormat:@"Rs 200"];
         }
     }
 }

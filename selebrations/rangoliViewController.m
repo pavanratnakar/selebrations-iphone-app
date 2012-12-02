@@ -15,8 +15,15 @@
 
 @implementation rangoliViewController
 
-@synthesize label,imageView,id;
+@synthesize label,imageView,id,stockDetails,price,description,buyButton;
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    if ([touch view] == imageView) {
+        NSLog(@"TEST");
+    }
+}
+    
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,8 +36,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"xv"]];
-    self.view.backgroundColor = background;
+    [self initStyling];
+}
+
+- (void) initStyling
+{
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"xv"]];
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,26 +10,23 @@
 
 @implementation categoriesTableViewCell
 
-@synthesize thumbnail,label,loader;
+@synthesize thumbnail,label;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        [loader startAnimating];
     }
-    return self;
-}
-
--(id)initWithCoder:(NSCoder *)aDecoder {
-    if ( !(self = [super initWithCoder:aDecoder]) ) return nil;
-    [loader startAnimating];
     return self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
+}
+
+- (void) stopLoaderAnimation {
+    [loader stopAnimating];
 }
 
 @end
