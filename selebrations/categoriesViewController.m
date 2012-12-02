@@ -10,6 +10,8 @@
 #import "categoriesTableViewCell.h"
 #import "rangoliViewController.h"
 #import "AFJSONRequestOperation.h"
+#import <CoreLocation/CoreLocation.h>
+#import <QuartzCore/CALayer.h>
 
 @interface categoriesViewController ()
 
@@ -29,6 +31,8 @@
     [super viewDidLoad];
     [self getRangolis];
 
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"xv"]];
+    self.tableView.backgroundColor = background;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -42,7 +46,7 @@
 }
 
 - (void)getRangolis {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://selebrations.pavanratnakar.com/rangoliController.php?type=rangolis"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://selebrations.pavanratnakar.com/controller/rangoliController.php?type=rangolis"]];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         rangolis = [JSON valueForKeyPath:@"response"];
         
@@ -62,16 +66,6 @@
         NSLog(@"Selebrations Rangolis: %@,%@,%@", response,error,JSON);
     }];
     [operation start];
-    images = [NSMutableArray arrayWithObjects:
-              @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/pearl_rangoli",
-              @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/chakra_rangoli",
-              @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/medium_diya_plate_red",
-              @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/square_rangoli",
-              @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/square_rangoli",
-              @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/square_rangoli",
-              @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/square_rangoli",
-              @"http://selebrations.pavanratnakar.com/wp-content/uploads/2012/04/square_rangoli",
-              nil];
 }
 
 #pragma mark - Table view data source
@@ -92,11 +86,16 @@
     if (cell == nil) {
         cell = [[categoriesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    NSMutableDictionary *rangoliDetails = [rangolis objectAtIndex:indexPath.row];
+    NSMutableDictionary *rangoliDetails = [rangolis objectAtIndex:indexPath.row];\
+    
+    // ADD CELL PROPERTIES
     [[cell loader] stopAnimating];
     cell.label.text =[NSString stringWithFormat:@"%@",[rangoliDetails objectForKey:@"title"]];
-    // TODO : NEED TO ADD IMAGES IN SERVER RESPONSE
-    cell.imageView.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@-90x67.jpg",[images objectAtIndex:0]]]]];
+    cell.imageView.layer.masksToBounds = YES;
+    cell.imageView.layer.borderColor = [UIColor blackColor].CGColor;
+    cell.imageView.layer.borderWidth = 1;
+    cell.imageView.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@-80x80.jpg",[rangoliDetails objectForKey:@"guid"]]]]];
+
     return cell;
 }
 
@@ -140,17 +139,18 @@
 */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    http://selebrations.pavanratnakar.com/wp-content/uploads/2012/02/big_diya_design_2_1_rangoli-150x112.jpg
-    
     if ([[segue identifier] isEqualToString:@"rangoli"]) {
         NSInteger selectedIndex = [[self.tableView indexPathForSelectedRow] row];
         rangoliViewController *rangoli = [segue destinationViewController];
         if (rangoli.view) {
             NSMutableDictionary *rangoliDetails = [rangolis objectAtIndex:selectedIndex];
+            rangoli.id = [rangoliDetails objectForKey:@"post_name"];
             rangoli.label.text =[NSString stringWithFormat:@"%@",[rangoliDetails objectForKey:@"title"]];
-            rangoli.image.image =  [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@-150x112.jpg",[images objectAtIndex:0]]]]];
+            rangoli.imageView.layer.masksToBounds = YES;
+            rangoli.imageView.layer.borderColor = [UIColor blackColor].CGColor;
+            rangoli.imageView.layer.borderWidth = 1;
+            rangoli.imageView.image =  [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@.jpg",[rangoliDetails objectForKey:@"guid"]]]]];
         }
-        
     }
 }
 

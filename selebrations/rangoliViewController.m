@@ -15,7 +15,7 @@
 
 @implementation rangoliViewController
 
-@synthesize label,image;
+@synthesize label,imageView,id;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,7 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"xv"]];
+    self.view.backgroundColor = background;
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,7 +43,7 @@
     if ([[segue identifier] isEqualToString:@"web"]) {
         selebrationsWebViewController *web = [segue destinationViewController];
         if (web.view) {
-            [web.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: @"http://selebrations.pavanratnakar.com/shop/silk-lotus-rangoli/"]]];
+            [web.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: [NSString stringWithFormat: @"http://selebrations.pavanratnakar.com/shop/%@/",id]]]];
         }
         
     }

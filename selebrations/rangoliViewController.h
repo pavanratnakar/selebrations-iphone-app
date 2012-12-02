@@ -11,6 +11,7 @@
 @interface rangoliViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) NSString *id;
 
 @end

@@ -1,20 +1,18 @@
 //
-//  selebrationsHomeViewController.m
+//  aboutUsViewController.m
 //  selebrations
 //
-//  Created by Pavan Ratnakar on 12/1/12.
+//  Created by Pavan Ratnakar on 12/2/12.
 //  Copyright (c) 2012 Pavan Ratnakar. All rights reserved.
 //
 
-#import "selebrationsHomeViewController.h"
+#import "aboutUsViewController.h"
 
-@interface selebrationsHomeViewController ()
+@interface aboutUsViewController ()
 
 @end
 
-@implementation selebrationsHomeViewController
-
-@synthesize searchBar;
+@implementation aboutUsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
