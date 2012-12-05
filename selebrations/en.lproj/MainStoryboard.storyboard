@@ -25,7 +25,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="26r-ZK-QFZ"/>
                                 </constraints>
-                                <string key="text">We are a Bangalore based organisation which aims at helping you beautify your nest on all occasions. Order today and decorate with a difference.</string>
+                                <string key="text">We are a Bangalore, India based organisation which aims at helping you beautify your nest on all occasions. Order today and decorate with a difference.</string>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

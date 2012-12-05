@@ -154,7 +154,7 @@
             rangoli.imageView.image =  [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@.jpg",[rangoliDetails objectForKey:@"guid"]]]]];
             rangoli.stockDetails.text = [NSString stringWithFormat:@"In Stock"];
             rangoli.description.text = [rangoliDetails objectForKey:@"post_excerpt"];
-            rangoli.price.text =  [NSString stringWithFormat:@"Rs 200"];
+            rangoli.price.text = [NSString stringWithFormat:@"Rs %@",[rangoliDetails objectForKey:@"price"]];
         }
     }
 }
