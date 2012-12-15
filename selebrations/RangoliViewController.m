@@ -1,19 +1,19 @@
 //
-//  rangoliViewController.m
-//  selebrations
+//  RangoliViewController.m
+//  Selebrations
 //
 //  Created by Pavan Ratnakar on 11/30/12.
 //  Copyright (c) 2012 Pavan Ratnakar. All rights reserved.
 //
 
-#import "rangoliViewController.h"
-#import "selebrationsWebViewController.h"
+#import "RangoliViewController.h"
+#import "SelebrationsWebViewController.h"
 
-@interface rangoliViewController ()
+@interface RangoliViewController ()
 
 @end
 
-@implementation rangoliViewController
+@implementation RangoliViewController
 
 @synthesize label,imageView,id,stockDetails,price,description,buyButton;
 
@@ -52,7 +52,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"web"]) {
-        selebrationsWebViewController *web = [segue destinationViewController];
+        SelebrationsWebViewController *web = [segue destinationViewController];
         if (web.view) {
             [web.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: [NSString stringWithFormat: @"http://selebrations.pavanratnakar.com/shop/%@/",id]]]];
         }

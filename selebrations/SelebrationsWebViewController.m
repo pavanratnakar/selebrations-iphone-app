@@ -1,18 +1,20 @@
 //
-//  aboutUsViewController.m
-//  selebrations
+//  SelebrationsWebViewController.m
+//  Selebrations
 //
-//  Created by Pavan Ratnakar on 12/2/12.
+//  Created by Pavan Ratnakar on 12/1/12.
 //  Copyright (c) 2012 Pavan Ratnakar. All rights reserved.
 //
 
-#import "aboutUsViewController.h"
+#import "SelebrationsWebViewController.h"
 
-@interface aboutUsViewController ()
+@interface SelebrationsWebViewController ()
 
 @end
 
-@implementation aboutUsViewController
+@implementation SelebrationsWebViewController
+
+@synthesize webView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,8 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"wild_oliva"]];
-    self.view.backgroundColor = background;
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

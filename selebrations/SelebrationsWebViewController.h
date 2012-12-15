@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface selebrationsWebViewController : UIViewController
+@interface SelebrationsWebViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 

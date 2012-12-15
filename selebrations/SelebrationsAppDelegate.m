@@ -1,14 +1,14 @@
 //
-//  selebrationsAppDelegate.m
-//  selebrations
+//  SelebrationsAppDelegate.m
+//  Selebrations
 //
 //  Created by Pavan Ratnakar on 11/30/12.
 //  Copyright (c) 2012 Pavan Ratnakar. All rights reserved.
 //
 
-#import "selebrationsAppDelegate.h"
+#import "SelebrationsAppDelegate.h"
 
-@implementation selebrationsAppDelegate
+@implementation SelebrationsAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

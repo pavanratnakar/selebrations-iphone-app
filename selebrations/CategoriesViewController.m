@@ -1,23 +1,24 @@
 //
-//  categoriesViewController.m
-//  selebrations
+//  CategoriesViewController.m
+//  Selebrations
 //
 //  Created by Pavan Ratnakar on 11/30/12.
 //  Copyright (c) 2012 Pavan Ratnakar. All rights reserved.
 //
 
-#import "categoriesViewController.h"
-#import "categoriesTableViewCell.h"
-#import "rangoliViewController.h"
+#import "SelebrationsLib.h"
+#import "CategoriesViewController.h"
+#import "CategoriesTableViewCell.h"
+#import "RangoliViewController.h"
 #import "AFJSONRequestOperation.h"
 #import <CoreLocation/CoreLocation.h>
 #import <QuartzCore/CALayer.h>
 
-@interface categoriesViewController ()
+@interface CategoriesViewController ()
 
 @end
 
-@implementation categoriesViewController
+@implementation CategoriesViewController
 
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
@@ -82,14 +83,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    categoriesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CategoriesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[categoriesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[CategoriesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    NSMutableDictionary *rangoliDetails = [rangolis objectAtIndex:indexPath.row];\
+    NSMutableDictionary *rangoliDetails = [rangolis objectAtIndex:indexPath.row];
     
     // ADD CELL PROPERTIES
     [cell stopLoaderAnimation];
+    cell.contentView.backgroundColor = [SelebrationsLib getRandomColor];
     cell.label.text =[NSString stringWithFormat:@"%@",[rangoliDetails objectForKey:@"title"]];
     cell.imageView.layer.masksToBounds = YES;
     cell.imageView.layer.borderColor = [UIColor blackColor].CGColor;
@@ -142,7 +144,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"rangoli"]) {
         NSInteger selectedIndex = [[self.tableView indexPathForSelectedRow] row];
-        rangoliViewController *rangoli = [segue destinationViewController];
+        RangoliViewController *rangoli = [segue destinationViewController];
         if (rangoli.view) {
             NSMutableDictionary *rangoliDetails = [rangolis objectAtIndex:selectedIndex];
             rangoli.id = [rangoliDetails objectForKey:@"post_name"];
@@ -160,7 +162,6 @@
 }
 
 #pragma mark - Table view delegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.

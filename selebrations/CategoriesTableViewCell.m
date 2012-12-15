@@ -1,14 +1,14 @@
 //
-//  categoriesTableViewCell.m
-//  selebrations
+//  CategoriesTableViewCell.m
+//  Selebrations
 //
 //  Created by Pavan Ratnakar on 11/30/12.
 //  Copyright (c) 2012 Pavan Ratnakar. All rights reserved.
 //
 
-#import "categoriesTableViewCell.h"
+#import "CategoriesTableViewCell.h"
 
-@implementation categoriesTableViewCell
+@implementation CategoriesTableViewCell
 
 @synthesize thumbnail,label;
 
