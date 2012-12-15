@@ -38,7 +38,7 @@
                                     <outlet property="delegate" destination="3" id="lBW-Hu-9s9"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" text="Top Rated Products" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqn-uG-Btm">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Top Rated Products" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqn-uG-Btm">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="DHW-s3-jFo"/>
@@ -47,26 +47,50 @@
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Top Selling Products" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhF-ur-gFY">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="8VA-EU-E7k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAw-dW-qzy" customClass="iCarousel">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3" id="x9E-of-KND"/>
+                                    <outlet property="delegate" destination="3" id="T86-h4-d8f"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Cub-Vn-Ljp" firstAttribute="top" secondItem="17" secondAttribute="top" constant="219" id="Bb4-qu-M4y"/>
+                            <constraint firstAttribute="bottom" secondItem="TAw-dW-qzy" secondAttribute="bottom" constant="12" id="2xI-bM-lYp"/>
+                            <constraint firstItem="TAw-dW-qzy" firstAttribute="top" secondItem="17" secondAttribute="top" constant="327" id="6pt-3J-wBs"/>
                             <constraint firstItem="kqn-uG-Btm" firstAttribute="top" secondItem="Qjh-7J-Ox4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Cd2-6p-Jzj"/>
                             <constraint firstItem="22" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="DWH-EO-w8F"/>
-                            <constraint firstAttribute="bottom" secondItem="Cub-Vn-Ljp" secondAttribute="bottom" constant="200" id="Fej-QM-BIu"/>
+                            <constraint firstAttribute="bottom" secondItem="PhF-ur-gFY" secondAttribute="bottom" constant="183" id="EIK-U8-iTD"/>
                             <constraint firstItem="Cub-Vn-Ljp" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="OPn-2w-f6w"/>
+                            <constraint firstItem="TAw-dW-qzy" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="Ph8-ao-CAD"/>
                             <constraint firstItem="kqn-uG-Btm" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="ROJ-N2-heH"/>
+                            <constraint firstItem="TAw-dW-qzy" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="TNm-DJ-miE"/>
+                            <constraint firstItem="PhF-ur-gFY" firstAttribute="top" secondItem="Cub-Vn-Ljp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Vyo-zQ-ty6"/>
                             <constraint firstItem="Cub-Vn-Ljp" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="Zw8-iv-fwH"/>
+                            <constraint firstItem="PhF-ur-gFY" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="cvl-3I-CZi"/>
                             <constraint firstItem="Qjh-7J-Ox4" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="e5l-rm-fHG"/>
                             <constraint firstItem="22" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="eNy-Bm-Gzr"/>
                             <constraint firstItem="kqn-uG-Btm" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="jEe-Mc-iW5"/>
                             <constraint firstItem="22" firstAttribute="top" secondItem="17" secondAttribute="top" type="default" id="pXM-jJ-9eB"/>
+                            <constraint firstItem="PhF-ur-gFY" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="voL-qm-tLd"/>
+                            <constraint firstItem="Cub-Vn-Ljp" firstAttribute="top" secondItem="kqn-uG-Btm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xgf-uo-IuP"/>
                             <constraint firstItem="Qjh-7J-Ox4" firstAttribute="top" secondItem="17" secondAttribute="top" constant="49" id="xlx-ov-zHg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="second" id="6"/>
                     <connections>
-                        <outlet property="carousel" destination="Cub-Vn-Ljp" id="lyy-IE-fdY"/>
+                        <outlet property="carousel1" destination="Cub-Vn-Ljp" id="0KE-eS-0uT"/>
+                        <outlet property="carousel2" destination="TAw-dW-qzy" id="VNT-0N-M9n"/>
                         <outlet property="searchDisplayController" destination="Ek9-Wm-qqI" id="0sl-00-kX4"/>
                     </connections>
                 </viewController>
@@ -473,7 +497,8 @@
         <class className="SelebrationsHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SelebrationsHomeViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="carousel" candidateClass="iCarousel"/>
+                <relationship kind="outlet" name="carousel1" candidateClass="iCarousel"/>
+                <relationship kind="outlet" name="carousel2" candidateClass="iCarousel"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>

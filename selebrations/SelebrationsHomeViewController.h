@@ -13,6 +13,7 @@
 @interface SelebrationsHomeViewController : UIViewController<UISearchBarDelegate,UISearchDisplayDelegate,iCarouselDataSource, iCarouselDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (nonatomic, retain) IBOutlet iCarousel *carousel;
+@property (nonatomic, retain) IBOutlet iCarousel *carousel1;
+@property (nonatomic, retain) IBOutlet iCarousel *carousel2;
 
 @end

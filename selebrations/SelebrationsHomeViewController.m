@@ -20,7 +20,8 @@
 
 @implementation SelebrationsHomeViewController
 
-@synthesize carousel;
+@synthesize carousel1;
+@synthesize carousel2;
 @synthesize rangolis;
 @synthesize searchBar;
 
@@ -44,8 +45,8 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://selebrations.pavanratnakar.com/controller/rangoliController.php?type=rangolis"]];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         rangolis = [JSON valueForKeyPath:@"response"];
-        [self.carousel reloadData];
-        
+        [self.carousel1 reloadData];
+        [self.carousel2 reloadData];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON){
         NSLog(@"Selebrations Rangolis: %@,%@,%@", response,error,JSON);
     }];
@@ -60,8 +61,9 @@
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
     UILabel *label = nil;
+    FXImageView *imageView = [[[FXImageView alloc] initWithFrame:CGRectMake(0, 0, 80.0f, 80.0f)] autorelease];
+    NSMutableDictionary *rangoliDetails = [rangolis objectAtIndex:index];
     if (view == nil) {
-        FXImageView *imageView = [[[FXImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)] autorelease];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.asynchronous = YES;
         imageView.reflectionScale = 0.5f;
@@ -69,22 +71,21 @@
         imageView.reflectionGap = 10.0f;
         imageView.shadowOffset = CGSizeMake(0.0f, 2.0f);
         imageView.shadowBlur = 5.0f;
+        [imageView setImageWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@-80x80.jpg",[rangoliDetails objectForKey:@"guid"]]]];
         view = imageView;
         
-        /*label = [[[UILabel alloc] initWithFrame:view.bounds] autorelease];
+        label = [[[UILabel alloc] initWithFrame:view.bounds] autorelease];
         [label setBackgroundColor:[SelebrationsLib getRandomColor]];
         [label setTextAlignment:NSTextAlignmentCenter];
         [label setTextColor:[UIColor whiteColor]];
         [label setNumberOfLines:3];
         [label.font fontWithSize:10];
+        [label setText:[NSString stringWithFormat:@"%@",[rangoliDetails objectForKey:@"title"]]];
         view.contentMode = UIViewContentModeScaleAspectFit;
-        [view addSubview:label];*/
+        //[view addSubview:label];
     } else {
         label = (UILabel *)[view viewWithTag:1];
     }
-    NSMutableDictionary *rangoliDetails = [rangolis objectAtIndex:index];
-    [(FXImageView *)view setImageWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@-80x80.jpg",[rangoliDetails objectForKey:@"guid"]]]];
-    //label.text =[NSString stringWithFormat:@"%@",[rangoliDetails objectForKey:@"title"]];
     return view;
 }
 
@@ -109,16 +110,18 @@
     [super viewDidLoad];
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"wild_oliva"]];
     self.view.backgroundColor = background;
-    carousel.type = iCarouselTypeCoverFlow;
-    carousel.backgroundColor = [UIColor clearColor];
+    carousel1.type = iCarouselTypeRotary;
+    carousel1.backgroundColor = [UIColor clearColor];
+    carousel2.type = iCarouselTypeRotary;
+    carousel2.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    
     //free up memory by releasing subviews
-    self.carousel = nil;
+    self.carousel1 = nil;
+    self.carousel2 = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -131,8 +134,10 @@
 {
     //it's a good idea to set these to nil here to avoid
     //sending messages to a deallocated viewcontroller
-    carousel.delegate = nil;
-    carousel.dataSource = nil;
+    carousel1.delegate = nil;
+    carousel1.dataSource = nil;
+    carousel2.delegate = nil;
+    carousel2.dataSource = nil;
 }
 
 @end
