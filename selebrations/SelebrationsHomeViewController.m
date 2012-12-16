@@ -64,25 +64,24 @@
     FXImageView *imageView = [[[FXImageView alloc] initWithFrame:CGRectMake(0, 0, 80.0f, 80.0f)] autorelease];
     NSMutableDictionary *rangoliDetails = [rangolis objectAtIndex:index];
     if (view == nil) {
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.asynchronous = YES;
         imageView.reflectionScale = 0.5f;
-        imageView.reflectionAlpha = 0.25f;
-        imageView.reflectionGap = 10.0f;
+        imageView.reflectionAlpha = 0.5f;
+        imageView.reflectionGap = 1.0f;
         imageView.shadowOffset = CGSizeMake(0.0f, 2.0f);
         imageView.shadowBlur = 5.0f;
         [imageView setImageWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@-80x80.jpg",[rangoliDetails objectForKey:@"guid"]]]];
         view = imageView;
         
-        label = [[[UILabel alloc] initWithFrame:view.bounds] autorelease];
+        label = [[[UILabel alloc] initWithFrame:CGRectMake(0, view.bounds.size.width-20, view.bounds.size.width, 20)] autorelease];
         [label setBackgroundColor:[SelebrationsLib getRandomColor]];
         [label setTextAlignment:NSTextAlignmentCenter];
         [label setTextColor:[UIColor whiteColor]];
         [label setNumberOfLines:3];
-        [label.font fontWithSize:10];
+        [label setFont:[UIFont systemFontOfSize:8]];
         [label setText:[NSString stringWithFormat:@"%@",[rangoliDetails objectForKey:@"title"]]];
         view.contentMode = UIViewContentModeScaleAspectFit;
-        //[view addSubview:label];
+        [view addSubview:label];
     } else {
         label = (UILabel *)[view viewWithTag:1];
     }

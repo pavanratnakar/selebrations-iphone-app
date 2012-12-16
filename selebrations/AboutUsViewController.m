@@ -89,8 +89,10 @@
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"data"];
         }
+        cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.text = [owner objectForKey:@"name"];
-        [cell setTextAlignment:NSTextAlignmentCenter];
+        cell.textLabel.font = [UIFont systemFontOfSize:15];
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
         [cell.contentView setBackgroundColor:[SelebrationsLib getRandomColor]];
         return cell;
     } else {
